@@ -47,11 +47,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   Row(
                   children: <Widget>[
                     Padding(padding: EdgeInsets.fromLTRB(30,10,10,10)),
-                    cgpa(8.52),
+                    CGPA(cgpa: '8.62',),
                     Padding(padding: EdgeInsets.fromLTRB(40,10,10,10)),
                     semAvg(80),
                     Padding(padding: EdgeInsets.fromLTRB(30,10,10,10)),
-                    popularity(1242)
+                    popularity(1242)  
                     ],
                   )    
                 ]
@@ -241,20 +241,28 @@ Column userDetails(name,dept,year){
           ); 
 }
 
-Row cgpa(cGPA){
-  return Row(
+class CGPA extends StatelessWidget {
+
+  final String cgpa;
+  CGPA({this.cgpa});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-                Icon(
+                
+                const Icon(
                   FontAwesome.graduation_cap,
                   color: Colors.white,
                   ),
                 SizedBox(width: 10,),
+                
                 Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[  
                     
-                    Text(cGPA.toString(),
+                    Text(cgpa.toString(),
                     style: TextStyle(
                     fontFamily: 'Montserrat',
                     fontSize: 20,
@@ -262,7 +270,7 @@ Row cgpa(cGPA){
                     color: Colors.white
                   ),),
 
-                    Text('CGPA',
+                    const Text('CGPA',
                     style: TextStyle(
                     fontFamily: 'Montserrat',
                     fontSize: 20,
@@ -272,6 +280,7 @@ Row cgpa(cGPA){
               ],),
 
           ],);
+}
 }
 
 Column semAvg(semavg){
