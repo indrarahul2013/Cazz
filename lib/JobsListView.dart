@@ -39,7 +39,6 @@ class JobsListView extends StatelessWidget {
   }
 
   Future<List<Job>> _fetchJobs() async {
-
     final jobsListAPIUrl = 'https://mock-json-service.glitch.me/';
     final response = await http.get(jobsListAPIUrl);
 
